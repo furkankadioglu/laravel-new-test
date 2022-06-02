@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Workshop;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -100,8 +101,10 @@ class EventsController extends BaseController
     ]
      */
 
+
     public function getEventsWithWorkshops() {
-        throw new \Exception('implement in coding task 1');
+        // TO DO: Add resource collection for response. (I didn't added because it's not requested (at least yet))
+        return Event::with('workshops')->get();
     }
 
 
